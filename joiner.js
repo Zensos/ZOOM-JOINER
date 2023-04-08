@@ -26,23 +26,23 @@
     })
 
     /* FIND CONFIG LOCATION */
-    const configLocation = data.search("config.ts");
-    const ts = data.substr(configLocation).split("'")[1];
+    const config_location = data.search("config.ts");
+    const ts = data.substr(config_location).split("'")[1];
 
-    const authLocation = data.search("config.auth");
-    const auth = data.substr(authLocation).split('"')[1];
+    const auth_location = data.search("config.auth");
+    const auth = data.substr(auth_location).split('"')[1];
 
-    const rwcTokenLocation = data.search("config.encryptedRWC");
-    const rwcToken = data.substr(rwcTokenLocation).split('"')[3]
+    const rwx_token_location = data.search("config.encryptedRWC");
+    const rwcToken = data.substr(rwx_token_location).split('"')[3]
 
-    const trackAuthLocation = data.search("config.trackAuth");
-    const trackAuth = data.substr(trackAuthLocation).split('"')[1]
+    const track_auth_location = data.search("config.trackAuth");
+    const trackAuth = data.substr(track_auth_location).split('"')[1]
 
-    const midLocation = data.search("config.mid");
-    const mid = data.substr(midLocation).split('"')[1]
+    const mid_location = data.search("config.mid");
+    const mid = data.substr(mid_location).split('"')[1]
 
-    const tidLocation = data.search("config.tid");
-    const tid = data.substr(tidLocation).split('"')[1]
+    const tid_location = data.search("config.tid");
+    const tid = data.substr(tid_location).split('"')[1]
 
     /* GET RWC AUTH AND RWG */
     const rwcRes = await axios({
