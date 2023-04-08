@@ -10,17 +10,18 @@
         password: "", // MEET PASSWORD
     }
 
-    if (!options.code || !options.name || !options.password) return console.log({error: "INVALID OPTIONS"})
+    if (!options.code || !options.name || !options.password) return console.log({ error: "INVALID OPTIONS" })
 
     /* INIT PAGE REQUEST */
     const { data } = await axios({
         url: `https://pwa.zoom.us/wc/${options.code}/join?pwd=${options.password}`,
         methods: "GET",
         headers: {
+            /* FIND IT BY YOUR SELF */
             Cookie: `wc_join=${options.code}*${options.name}; wc_dn=${options.name}; _zm_currency=USD; _zm_mtk_guid=1c56a76aaacb4028b1ad337c1a867bbd; _zm_lang=en-US; _zm_client_tz=America/Los_Angeles; _zm_cdn_blocked=unlog_unblk; _ga=GA1.2.1053826471.1585760799; _gid=GA1.2.1984667947.1585760799; wc_info=16800768%23290965%23B2F382A1-8D8A-43E7-861D-68121713ABE0%23%23test%230`
         }
     }).catch(err => {
-        console.log({error: err})
+        console.log({ error: err })
         process.exit()
     })
 
@@ -48,7 +49,7 @@
         url: `https://rwcva1.cloud.zoom.us/wc/ping/${options.code}?ts=${ts}&auth=${auth}&rwcToken=${rwcToken}&dmz=1`,
         method: "GET",
     }).catch(err => {
-        console.log({error: err})
+        console.log({ error: err })
         process.exit()
     })
 
